@@ -40,7 +40,7 @@ COLOR_LIGHTNING		= (255,255,255)		# White
 
 # ----- Blink/Fade functionality for Wind and Lightning -----
 # Do you want the METARMap to be static to just show flight conditions, or do you also want blinking/fading based on current wind conditions
-ACTIVATE_WINDCONDITION_ANIMATION = True	# Set this to False for Static or True for animated wind conditions
+ACTIVATE_WINDCONDITION_ANIMATION = False	# Set this to False for Static or True for animated wind conditions
 #Do you want the Map to Flash white for lightning in the area
 ACTIVATE_LIGHTNING_ANIMATION = True		# Set this to False for Static or True for animated Lightning
 # Fade instead of blink
