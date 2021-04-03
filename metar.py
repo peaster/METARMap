@@ -209,7 +209,7 @@ while looplimit > 0:
 	for airportcode in airports:
 		# Skip NULL entries
 		if airportcode == "NULL":
-			pixels[i] = COLOR_CLEAR
+			pixels[i] = COLOR_LIGHTNING
 			i += 1
 			continue
 
