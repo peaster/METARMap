@@ -24,11 +24,11 @@ except ImportError:
 # NeoPixel LED Configuration
 LED_COUNT		= 50			# Number of LED pixels.
 LED_PIN			= board.D18		# GPIO pin connected to the pixels (18 is PCM).
-LED_BRIGHTNESS		= 0.225			# Float from 0.0 (min) to 1.0 (max)
+LED_BRIGHTNESS		= 0.3			# Float from 0.0 (min) to 1.0 (max)
 LED_ORDER		= neopixel.GRB		# Strip type and colour ordering
 
 COLOR_VFR		= (255,0,0)		# Green
-COLOR_VFR_FADE		= (125,0,0)		# Green Fade for wind
+COLOR_VFR_FADE		= (75,0,0)		# Green Fade for wind
 COLOR_MVFR		= (0,0,255)		# Blue
 COLOR_MVFR_FADE		= (0,0,125)		# Blue Fade for wind
 COLOR_IFR		= (0,255,0)		# Red
@@ -40,7 +40,7 @@ COLOR_LIGHTNING		= (255,255,255)		# White
 
 # ----- Blink/Fade functionality for Wind and Lightning -----
 # Do you want the METARMap to be static to just show flight conditions, or do you also want blinking/fading based on current wind conditions
-ACTIVATE_WINDCONDITION_ANIMATION = False	# Set this to False for Static or True for animated wind conditions
+ACTIVATE_WINDCONDITION_ANIMATION = True 	# Set this to False for Static or True for animated wind conditions
 #Do you want the Map to Flash white for lightning in the area
 ACTIVATE_LIGHTNING_ANIMATION = True		# Set this to False for Static or True for animated Lightning
 # Fade instead of blink
@@ -49,7 +49,7 @@ FADE_INSTEAD_OF_BLINK	= True			# Set to False if you want blinking
 WIND_BLINK_THRESHOLD	= 18			# Knots of windspeed
 ALWAYS_BLINK_FOR_GUSTS	= False			# Always animate for Gusts (regardless of speeds)
 # Blinking Speed in seconds
-BLINK_SPEED		= 5.0			# Float in seconds, e.g. 0.5 for half a second
+BLINK_SPEED		= 1.0			# Float in seconds, e.g. 0.5 for half a second
 # Total blinking time in seconds.
 # For example set this to 300 to keep blinking for 5 minutes if you plan to run the script every 5 minutes to fetch the updated weather
 BLINK_TOTALTIME_SECONDS	= 300
@@ -58,7 +58,7 @@ BLINK_TOTALTIME_SECONDS	= 300
 ACTIVATE_DAYTIME_DIMMING = True		# Set to True if you want to dim the map after a certain time of day
 BRIGHT_TIME_START	= datetime.time(7,0)	# Time of day to run at LED_BRIGHTNESS in hours and minutes
 DIM_TIME_START		= datetime.time(19,0)	# Time of day to run at LED_BRIGHTNESS_DIM in hours and minutes
-LED_BRIGHTNESS_DIM	= 0.5			# Float from 0.0 (min) to 1.0 (max)
+LED_BRIGHTNESS_DIM	= 0.05			# Float from 0.0 (min) to 1.0 (max)
 
 USE_SUNRISE_SUNSET 	= True			# Set to True if instead of fixed times for bright/dimming, you want to use local sunrise/sunset
 LOCATION 		= "Virginia Beach"		# Nearby city for Sunset/Sunrise timing, refer to https://astral.readthedocs.io/en/latest/#cities for list of cities supported
