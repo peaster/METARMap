@@ -24,7 +24,7 @@ except ImportError:
 # NeoPixel LED Configuration
 LED_COUNT		= 50			# Number of LED pixels.
 LED_PIN			= board.D18		# GPIO pin connected to the pixels (18 is PCM).
-LED_BRIGHTNESS		= 0.2  		# Float from 0.0 (min) to 1.0 (max)
+LED_BRIGHTNESS		= 0.25  		# Float from 0.0 (min) to 1.0 (max)
 LED_ORDER		= neopixel.GRB		# Strip type and colour ordering
 
 COLOR_VFR		= (255,0,0)		# Green
@@ -58,7 +58,7 @@ BLINK_TOTALTIME_SECONDS	= 300
 ACTIVATE_DAYTIME_DIMMING = True		# Set to True if you want to dim the map after a certain time of day
 BRIGHT_TIME_START	= datetime.time(7,0)	# Time of day to run at LED_BRIGHTNESS in hours and minutes
 DIM_TIME_START		= datetime.time(19,0)	# Time of day to run at LED_BRIGHTNESS_DIM in hours and minutes
-LED_BRIGHTNESS_DIM	= 0.05			# Float from 0.0 (min) to 1.0 (max)
+LED_BRIGHTNESS_DIM	= 0.12			# Float from 0.0 (min) to 1.0 (max)
 
 USE_SUNRISE_SUNSET 	= True			# Set to True if instead of fixed times for bright/dimming, you want to use local sunrise/sunset
 LOCATION 		= "Virginia Beach"		# Nearby city for Sunset/Sunrise timing, refer to https://astral.readthedocs.io/en/latest/#cities for list of cities supported
