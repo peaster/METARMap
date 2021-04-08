@@ -210,6 +210,7 @@ while looplimit > 0:
 		# Skip NULL entries
 		if airportcode == "NULL":
 			pixels[i] = COLOR_CLEAR
+			pixels[i].brightness = 1
 			i += 1
 			continue
 
