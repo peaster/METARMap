@@ -14,7 +14,7 @@ READMEs](https://github.com/prueker/METARMap/blob/63b50e9ffea9607dcefa397a4d2d52
 * Update packages 
 	* `sudo apt-get update`
 	* `sudo apt-get upgrade`
-* Copy the **[metar.py](metar.py)**, **[pixelsoff.py](pixelsoff.py)**, **[airports](airports)**, **[refresh.sh](refresh.sh)** and **[lightsoff.sh](lightsoff.sh)** scripts into the pi home directory (/home/pi)
+* Copy the **[metar.py](metar.py)** and **[airports](airports)** files into the pi home directory (/home/pi)
 * Install python3 and pip3 if not already installed
 	* `sudo apt-get install python3`
 	* `sudo apt-get install python3-pip`
