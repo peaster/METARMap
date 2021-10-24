@@ -5,12 +5,6 @@ import board
 import neopixel
 import time
 import datetime
-try:
-	import displaymetar
-except ImportError:
-	displaymetar = None
-
-# metar.py script iteration 1.4.2
 
 # ---------------------------------------------------------------------------
 # ------------START OF CONFIGURATION-----------------------------------------

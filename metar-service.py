@@ -1,7 +1,7 @@
 import paho.mqtt.client as mqtt
 import mqtt_config as config
 import os
-from metar import MetarMap
+from metarmap import MetarMap
 
 broker_url = config.broker_url
 broker_port = config.broker_port

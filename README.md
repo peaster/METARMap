@@ -14,7 +14,7 @@ READMEs](https://github.com/prueker/METARMap/blob/63b50e9ffea9607dcefa397a4d2d52
 * Update packages 
 	* `sudo apt-get update`
 	* `sudo apt-get upgrade`
-* Copy the **[metar.py](metar.py)** and **[airports](airports)** files into the pi home directory (/home/pi)
+* Copy the **[metarmap.py](metarmap.py)** and **[airports](airports)** files into the pi home directory (/home/pi)
 * Install python3 and pip3 if not already installed
 	* `sudo apt-get install python3`
 	* `sudo apt-get install python3-pip`
@@ -22,10 +22,6 @@ READMEs](https://github.com/prueker/METARMap/blob/63b50e9ffea9607dcefa397a4d2d52
 	* [Neopixel](https://learn.adafruit.com/neopixels-on-raspberry-pi/python-usage): `sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel`
 	* [Paho MQTT](https://www.eclipse.org/paho/index.php?page=clients/python/index.php): `sudo pip3 install paho-mqtt`
 * Attach WS8211 LEDs to Raspberry Pi, if you are using just a few, you can connect the directly, otherwise you may need to also attach external power to the LEDs. For my purpose with 22 powered LEDs it was fine to just connect it directly. You can find [more details about wiring here](https://learn.adafruit.com/neopixels-on-raspberry-pi/raspberry-pi-wiring).
-
-* Test the script by running it directly (it needs to run with root permissions to access the GPIO pins):
-	* `sudo python3 metar.py`
-* Make appropriate changes to the **[airports](airports)** file for the airports you want to use and change the **[metar.py](metar.py)** and **[pixelsoff.py](pixelsoff.py)** script to the correct **`LED_COUNT`** (including NULLs if you have LEDS in between airports that will stay off) and **`LED_BRIGHTNESS`** if you want to change it
 
 ## Configure MQTT settings
 Configuration is managed through a private `mqtt_config.py` file. This contains information about your MQTT broker, so it should never be checked into git. The file should be the following:
@@ -65,7 +61,7 @@ sudo systemctl start mqtt-client.service
 ### **Additional Wind condition blinking/fading functionality**
 I recently expanded the script to also take wind condition into account and if the wind exceeds a certain threshold, or if it is gusting, make the LED for that airport either blink on/off or to fade between  two shades of the current flight category color.
 
-If you want to use this extra functionality, then inside the **[metar.py](metar.py)** file set the **`ACTIVATE_WINDCONDITION_ANIMATION`** parameter to **True**.
+If you want to use this extra functionality, then inside the **[metarmap.py](metarmap.py)** file set the **`ACTIVATE_WINDCONDITION_ANIMATION`** parameter to **True**.
 * There are a few additional parameters in the script you can configure to your liking:
 	* `FADE_INSTEAD_OF_BLINK` - set this to either **True** or **False** to switch between fading or blinking for the LEDs when conditions are windy
 	* `WIND_BLINK_THRESHOLD` - in Knots for normal wind speeds currently at the airport
@@ -78,7 +74,7 @@ If you want to use this extra functionality, then inside the **[metar.py](metar.
 After the recent addition for wind condition animation, I got another request from someone if I could add a white blinking animation to represent lightning in the area.
 Please note that due to the nature of the METAR system, this means that the METAR for this airport reports that there is Lightning somewhere in the vicinity of the airport, but not necessarily right at the airport.
 
-If you want to use this extra functionality, then inside the **[metar.py](metar.py)** file set the **`ACTIVATE_LIGHTNING_ANIMATION`** parameter to **True**.
+If you want to use this extra functionality, then inside the **[metarmap.py](metarmap.py)** file set the **`ACTIVATE_LIGHTNING_ANIMATION`** parameter to **True**.
 * This shares two configuration parameters together with the wind animation that you can modify as you like:
 	* `BLINKS_SPEED` - How fast the blinking happens, I found 1 second to be a happy medium so it's not too busy, but you can also make it faster, for example every half a second by using 0.5
 	* `BLINK_TOTALTIME_SECONDS` = How long do you want the script to run. I have this set to 300 seconds as I have my crontab setup to re-run the script every 5 minutes to get the latest weather information
