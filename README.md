@@ -1,7 +1,7 @@
 # Smart METARMap
 A MQTT-Enabled METARMap that neatly fits into [Home Assistant](https://www.home-assistant.io/), [OpenHab](https://www.openhab.org/), and other custom MQTT ecosystems. This allows users to control this map using their smart home setups and expose it to voice assistants.
 
-This is a fork of [https://github.com/prueker/METARMap](https://github.com/prueker/METARMap) and the [original 
+This project extends the functionality of [https://github.com/prueker/METARMap](https://github.com/prueker/METARMap) and the [original 
 READMEs](https://github.com/prueker/METARMap/blob/63b50e9ffea9607dcefa397a4d2d52b58c17648a/README.md) contain full instructions on setup and hardware. The two projects differ at the software setup.
 
 ## Map Setup
