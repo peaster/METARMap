@@ -46,7 +46,7 @@ To run the client permanently and to ensure it starts when you apply power to th
 Description=mqtt client service
 
 [Service]
-ExecStart=python3 mqtt-client.py
+ExecStart=python3 mqtt-service.py
 WorkingDirectory=/home/pi/
 Restart=always
 RestartSec=10
