@@ -152,6 +152,8 @@ class MetarMap:
 		for airportcode in self.airports():
 			# Skip NULL entries
 			if airportcode == "NULL":
+				pixels[i] = COLOR_LIGHTNING
+				pixels[i].brightness = 1
 				i += 1
 				continue
 
