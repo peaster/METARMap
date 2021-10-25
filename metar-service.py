@@ -32,6 +32,6 @@ if config.broker_username:
 client.connect(broker_url, broker_port)
 
 client.subscribe(config.set_topic, qos=1)
-client.publish(topic=config.state_topic, payload=state, qos=0, retain=False)
+client.publish(topic=config.state_topic, payload=state, qos=0, retain=True)
 
 client.loop_forever()
