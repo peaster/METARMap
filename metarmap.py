@@ -48,9 +48,8 @@ BLINK_TOTALTIME_SECONDS = 300
 # ---------------------------------------------------------------------------
 class MetarMap:
 
-	def __init__(self, brightness):
+	def __init__(self):
 		self.airports = self.setAirports
-		self.brightness = brightness
 
 	def setAirports(self):
 		# Read the airports file to retrieve list of airports and use as order for LEDs
@@ -63,12 +62,12 @@ class MetarMap:
 		pixels = neopixel.NeoPixel(board.D18, LED_COUNT)
 		pixels.deinit()		
 
-	def updateLights(self):
+	def updateLights(self, brightness):
 		# Initialize the LED strip
 		print("Wind animation:" + str(ACTIVATE_WINDCONDITION_ANIMATION))
 		print("Lightning animation:" + str(ACTIVATE_LIGHTNING_ANIMATION))
 		pixels = neopixel.NeoPixel(
-			board.D18, LED_COUNT, brightness=self.brightness, pixel_order=neopixel.GRB, auto_write=False)
+			board.D18, LED_COUNT, brightness=brightness, pixel_order=neopixel.GRB, auto_write=False)
 
 		# Retrieve METAR from aviationweather.gov data server
 		# Details about parameters can be found here: https://www.aviationweather.gov/dataserver/example?datatype=metar
